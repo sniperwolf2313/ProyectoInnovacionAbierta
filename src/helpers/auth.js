@@ -4,7 +4,7 @@ helpers.isAuthenticated = (req, res, next)=>{
     if(req.isAuthenticated()){
         return next()
     }
-    //req.flash('error_msg', 'NO autorizado')
+    req.flash('error_msg', 'NO autorizado')
     res.redirect('/users/signin')
 }
 

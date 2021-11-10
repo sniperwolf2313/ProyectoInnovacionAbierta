@@ -39,7 +39,12 @@ passport.use('local-signin', new LocalStrategy({
 
 }, async (req, email, password, done )=>{
     const passwordOk = await User.findByCredentials(email, password);
+    const user = await User.findOne({email: email})
+    console.log(email)
+    console.log(password)
+    console.log(passwordOk)
       if (!passwordOk) {
         return done(null, false, { message: 'Invalid username or password' });
       }
+      return done(null,user)
 }))

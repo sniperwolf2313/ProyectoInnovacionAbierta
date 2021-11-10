@@ -1,0 +1,26 @@
+<div class="row">
+    {{#each retosguardados}}
+        <div class="col-md-3">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-between align-item-center">
+                            {{titulo}}
+                        </h5>
+                        <p class="card-text">{{descripcion}}</p>
+                        <form action="/retos/solucionarreto/{{_id}}" method="POST">
+                            <button type="submit" class="btn btn-primary btn-block btn-sm">Solucionar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead"> No Hay Retos Creados</p>
+            <a href="/retos/crear" class="btn btn-success btn-block">Crear Reto</a>
+        </div>
+    </div>
+    {{/each}}
+</div>

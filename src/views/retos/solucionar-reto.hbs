@@ -1,0 +1,29 @@
+<h1>Solucion</h1>
+
+<div class="col-md-4 align-item-center">
+    <div class="card">
+        <div class="card-header">
+            <h2>Solucionar Reto</h2>
+        </div>
+        <div class="card-body">
+            <form action="/retos/solucionarreto/{{retosolucionar.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label for="validationTextarea" class="form.label">Título del reto</label>
+                    <input type="text" name="titulo" class="form-control" placeholder="titulo" value="{{retosolucionar.titulo}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="validationTextarea" class="form-label">Descripción del reto</label>
+                    <textarea type="text" name="descripcion" class="form-control" disabled>{{retosolucionar.descripcion}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="validationTextarea" class="form.label">Fecha limite del reto</label>
+                    <input name="fechafin" type="date" class="form-control" value="{{retosolucionar.fechafin}}" disabled>
+                </div>
+                <div class="form-group">
+                    <Button class="btn btn-primary brn-block" type="submit">Subir Solución</Button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

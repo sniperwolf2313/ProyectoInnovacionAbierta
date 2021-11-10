@@ -43,7 +43,7 @@ app.use(passport.session())
 
 app.use((req, res, next)=>{
     app.locals.signUpMessage = req.flash('signUpMessage')
-    app.locals.signUpMessage = req.flash('signInMessage')
+    app.locals.signInMessage = req.flash('signInMessage')
     app.locals.user = req.user
     next()
 })

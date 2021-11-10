@@ -21,10 +21,8 @@ UserSchema.methods.matchPassword = function(passregistro){
     return bcrypt.compareSync(passregistro, this.passregistro)
 }
 
-
-
 UserSchema.statics.findByCredentials = async (email, password) => {
-    const user = await user.findOne({ email })
+    const user = await User.findOne({ email })
 
     if (!user) {
         throw new Error('Unable to login')
@@ -39,4 +37,5 @@ UserSchema.statics.findByCredentials = async (email, password) => {
     return user
 }
 
-module.exports = mongoose.model('users', UserSchema)
+const User = mongoose.model('users', UserSchema)
+module.exports = User
