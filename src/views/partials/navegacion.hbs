@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="container-fluid">
+            <img src="/img/cohete.png" width="50px" style="margin-right: 10px" alt="">
+            <a class="navbar-brand display-1" href="/">Innovación Abierta  </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/retos/crear">Crear Reto</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/retos">Retos comunidad</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/about">Ayuda</a>
+                    </li>
+                    {{#if (user)}}
+                        <li class="nav-item">
+                        <a class="nav-link" href="/users/perfil">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Salir</a>
+                        </li>
+                    
+                    {{else}}
+                        <li class="nav-item">
+                        <a class="nav-link" href="/users/signin">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/users/signup">Registrarse</a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

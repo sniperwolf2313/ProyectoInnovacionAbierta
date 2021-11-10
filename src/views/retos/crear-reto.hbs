@@ -1,0 +1,47 @@
+<div class="col-md-10 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h1>Crear Reto</h1>
+        </div>
+        <div class="card-body">
+            <form class="was-validated" action="/retos/crear-reto" method="POST">
+                <br> <br>
+                {{!-- Titulo --}}
+                <div class="mb-3">
+                    <label for="validationTextarea" class="form.label">Título del reto</label>
+                    <input name="titulo" type="text" class="form-control" required autofocus>
+                    <div class="invalid-feedback">Selecciona un título valido</div>
+                </div>
+                {{!-- Descripción --}}
+                <div class="mb-3">
+                    <label for="validationTextarea" class="form-label">Descripción del reto</label>
+                    <textarea name="descripcion" class="form-control is-invalid" id="validationTextarea" placeholder="Hablanos sobre el reto" required></textarea>
+                </div>
+                {{!-- Fecha Limite --}}
+                <div class="mb-3">
+                    <label for="validationTextarea" class="form.label">Fecha limite del reto</label>
+                    <input name="fechafin" type="date" class="form-control" required>
+                    <div class="invalid-feedback">Selecciona una fecha limite valida</div>
+                </div>
+                {{!-- Categoria --}}
+                <div class="mb-3">
+                    <select name="categoria" class="form-select" required aria-label="select example">
+                    <option value="">Categoria</option>
+                    <option value="1">Arte</option>
+                    <option value="2">Razonamiento logico</option>
+                    <option value="3">Cultura</option>
+                    </select>
+                    <div class="invalid-feedback">Selecciona una categoria acorde a tu reto</div>
+                </div>
+                {{!-- Archivo --}}
+                <div class="mb-3">
+                    <input name="file" type="file" class="form-control" aria-label="file example" >
+                </div>
+                {{!-- Botón Subir --}}
+                <div class="mb-3">
+                    <button name="btnpostular" class="btn btn-primary" type="submit">Postular Reto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
